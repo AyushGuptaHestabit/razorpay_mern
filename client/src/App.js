@@ -12,7 +12,7 @@ function App() {
 
 	const initPayment = (data) => {
 		const options = {
-			key: "YOUR_RAZORPAY_KEY",
+			key: "rzp_test_TNTClOSjEzJvyO",
 			amount: data.amount,
 			currency: data.currency,
 			name: book.name,
@@ -24,6 +24,7 @@ function App() {
 					const verifyUrl = "http://localhost:8080/api/payment/verify";
 					const { data } = await axios.post(verifyUrl, response);
 					console.log(data);
+					alert(data.message)
 				} catch (error) {
 					console.log(error);
 				}
